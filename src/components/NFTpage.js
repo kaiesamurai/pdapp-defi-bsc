@@ -54,12 +54,12 @@ async function buyNFT(tokenId) {
         //Pull the deployed contract instance
         let contract = new ethers.Contract(MarketplaceJSON.address, MarketplaceJSON.abi, signer);
         const salePrice = ethers.utils.parseUnits(data.price, 'ether')
-        updateMessage("Buying the Character... Please Wait (Upto 5 mins)")
+        updateMessage("Buying the Pokemon... Please Wait (Upto 5 mins)")
         //run the executeSale function
         let transaction = await contract.executeSale(tokenId, {value:salePrice});
         await transaction.wait();
 
-        alert('You successfully bought the Character!');
+        alert('You successfully bought the Pokemon!');
         updateMessage("");
     }
     catch(e) {
@@ -79,9 +79,9 @@ async function buyNFT(tokenId) {
             <Navbar></Navbar>
             <div className="flex ml-20 mt-20">
                 <img src={data.image} alt="" className="w-2/5" />
-                <div className="text-xl ml-20 space-y-8 text-white shadow-2xl rounded-lg border-2 p-5">
+                <div className="text-xl ml-20 space-y-8 text-red shadow-2xl rounded-lg border-2 p-5">
                     <div >
-                        Voucher Id: {data.name}
+                        Name: {data.name}
                     </div>
                     <div>
                         Description: {data.description}
@@ -97,10 +97,10 @@ async function buyNFT(tokenId) {
                     </div>
                     <div>
                     { currAddress != data.owner && currAddress != data.seller ?
-                        <button className="enableEthereumButton bg-[#0c0d26] hover:bg-gray-700 text-red font-bold py-2 px-4 rounded text-sm" onClick={() => buyNFT(tokenId)}>Buy this Character</button>
-                        : <div className="text-emerald-700">You are the owner of this Voucher</div>
+                        <button className="enableEthereumButton bg-gray-500 hover:bg-gray-700 text-red font-bold py-2 px-4 rounded text-sm" onClick={() => buyNFT(tokenId)}>Buy this Pokemon</button>
+                        : <div className="text-emerald-700">You are the owner of this Pokemon</div>
                     }
-                    <div className="text-green text-center mt-3">{message}</div>
+                    <div className="text-red text-center mt-3">{message}</div>
                     </div>
                 </div>
             </div>

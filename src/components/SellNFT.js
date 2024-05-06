@@ -32,12 +32,12 @@ export default function SellNFT () {
         try {
             //upload the file to IPFS
             disableButton();
-            updateMessage("Uploading voucher.. please dont click anything!")
+            updateMessage("Uploading pokemon.. please dont click anything!")
             const response = await uploadFileToIPFS(file);
             if(response.success === true) {
                 enableButton();
                 updateMessage("")
-                console.log("Uploaded voucher to Pinata: ", response.pinataURL)
+                console.log("Uploaded pokemon to Pinata: ", response.pinataURL)
                 setFileURL(response.pinataURL);
             }
         }
@@ -56,7 +56,7 @@ export default function SellNFT () {
             return -1;
         }
         if(new Date(expiry).getDate()<new Date().getDate()){
-            alert("Voucher has expired")
+            alert("Pokemon has expired")
             return -1;
         }
         const nftJSON = {
@@ -121,51 +121,46 @@ export default function SellNFT () {
         <Navbar></Navbar>
         <div className=" py-20 flex flex-col place-items-center mt-20 " id="nftForm" >
             <form className="bg-[#E6E6FA]  shadow-md rounded-lg px-8 pt-4 pb-8 mb-4   ">
-            <h3 className=" text-center font-bold mb-8 text-[rgb(12,13,38)] ">Upload Voucher here</h3>
+            <h3 className=" text-center font-bold mb-8 text-[rgb(12,13,38)] ">Upload your Pokemon here</h3>
                 <div className="mb-4">
-                    <label className="block text-blue-500  text-sm font-bold mb-2" htmlFor="name">Voucher Id: </label>
-                    <input className="bg-white hover:bg-green-50 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Enter Voucher Name" onChange={e => updateFormParams({...formParams, name: e.target.value})} value={formParams.name}></input>
-                </div>
-                <div className="mb-6">
-                    <label className="block text-blue-500 text-sm font-bold mb-2" htmlFor="description">Brief: </label>
-                    <textarea className="bg-white hover:bg-green-50 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" cols="40" rows="3" id="description" type="text" placeholder="Enter Description" value={formParams.description} onChange={e => updateFormParams({...formParams, description: e.target.value})}></textarea>
-                </div>
-               
-
-                <div className="mb-4">
-                    <label className="block text-blue-500 text-sm font-bold mb-2" htmlFor="value">Region:</label>
-                    <input className=" bg-white hover:bg-green-50 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="value" placeholder="Enter Place where Vocher is Valid" ></input>
-                </div>
-
-                <div className="mb-6">
-                    <label className="block text-blue-500 text-sm font-bold mb-2" htmlFor="cond">Conditions Applied: </label>
-                    <textarea className="bg-white hover:bg-green-50 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" cols="30" rows="3" id="cond" type="text" placeholder="Conditions" ></textarea>
-                </div>
-               
-              
-                
-                <div className="mb-4">
-                    <label className="block text-blue-500 text-sm font-bold mb-2" htmlFor="value">Expire Date: </label>
-                    <input className="bg-white hover:bg-green-50 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="date" placeholder="spd" value={formParams.expiry} onChange={e => updateFormParams({...formParams, expiry: e.target.value})}></input>
+                    <label className="block text-red-500  text-sm font-bold mb-2" htmlFor="name">Pokemon Name: </label>
+                    <input className="bg-white hover:bg-green-50 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Enter Pokemon Name" onChange={e => updateFormParams({...formParams, name: e.target.value})} value={formParams.name}></input>
                 </div>
                 
+                <div className="mb-6">
+                    <label className="block text-red-500 text-sm font-bold mb-2" htmlFor="description">Outro: </label>
+                    <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" cols="40" rows="5" id="description" type="text" placeholder="enter description" value={formParams.description} onChange={e => updateFormParams({...formParams, description: e.target.value})}></textarea>
+                </div>
 
 
 
 
+                <div className="mb-4">
+                    <label className="block text-red-500 text-sm font-bold mb-2" htmlFor="value">Stats-Atk</label>
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="value" placeholder="atk" ></input>
+                </div>
+                <div className="mb-4">
+                    <label className="block text-red-500 text-sm font-bold mb-2" htmlFor="value">Stats-Def</label>
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="value" placeholder="def" ></input>
+                </div>
+                <div className="mb-4">
+                    <label className="block text-red-500 text-sm font-bold mb-2" htmlFor="value">Stats-Spd</label>
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="value" placeholder="spd" ></input>
+                </div>
+    
 
 
                 <div className="mb-6">
-                    <label className="block text-blue-500 text-sm font-bold mb-2" htmlFor="price">Price (in MATIC):</label>
+                    <label className="block text-red-500 text-sm font-bold mb-2" htmlFor="price">Price (in MATIC):</label>
                     <input className="bg-white hover:bg-green-50 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="value" placeholder="in MATIC" step="0.01" value={formParams.price} onChange={e => updateFormParams({...formParams, price: e.target.value})}></input>
                 </div>
                 <div>
-                    <label className="block text-blue-500 text-sm font-bold mb-2" htmlFor="image">Upload Image</label>
+                    <label className="block text-red-500 text-sm font-bold mb-2" htmlFor="image">Upload your Pokemon</label>
                     <input type={"file"} onChange={OnChangeFile}></input>
                 </div>
                 <div className="text-green text-center">{message}</div>
-                <button onClick={listNFT} id ="list-button"className="font-bold mt-10 w-full bg-blue-500 text-white rounded p-2 shadow-lg">
-                    Sell Voucher
+                <button onClick={listNFT} id ="list-button"className="font-bold mt-10 w-full bg-red-500 text-white rounded p-2 shadow-lg">
+                    Sell Pokemon
                 </button>
             </form>
 
@@ -184,16 +179,16 @@ export default function SellNFT () {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">About</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">About</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Careers</a>
+                    <a href="#" className="hover:underline text-gray-500 dark:text-red-400 font-medium">Careers</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Brand Center</a>
+                    <a href="#" className="hover:underline text-gray-500 dark:text-red-400 font-medium">Brand Center</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Blog</a>
+                    <a href="#" className="hover:underline text-gray-500 dark:text-red-400 font-medium">Blog</a>
                 </li>
             </ul>
         </div>
@@ -201,16 +196,16 @@ export default function SellNFT () {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">Discord Server</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Discord Server</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">Twitter</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Twitter</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">Facebook</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Facebook</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">Contact Us</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -218,13 +213,13 @@ export default function SellNFT () {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">Privacy Policy</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Privacy Policy</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">Licensing</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Licensing</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">Terms &amp; Conditions</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Terms &amp; Conditions</a>
                 </li>
             </ul>
         </div>
@@ -232,16 +227,16 @@ export default function SellNFT () {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">iOS</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">iOS</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">Android</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Android</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">Windows</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Windows</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline text-gray-500 dark:text-blue-400 font-medium">MacOS</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">MacOS</a>
                 </li>
             </ul>
         </div>

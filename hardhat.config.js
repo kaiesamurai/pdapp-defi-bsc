@@ -26,10 +26,11 @@ module.exports = {
       url: process.env.PolyApiKey,
       accounts: [ process.env.privateKey ]
     },
-    //goerli: {
-      //url: "",
-      //accounts: [ process.env.privateKey ]
-    //}
+    'lisk-sepolia': {
+      chainId: 4202,
+      url: 'https://rpc.sepolia-api.lisk.com',
+      accounts: [process.env.WALLET_KEY],
+    },
   },
   solidity: {
     version: "0.8.4",

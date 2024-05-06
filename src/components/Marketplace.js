@@ -55,8 +55,8 @@ return (
     <div>
         <Navbar></Navbar>
         <div className="flex flex-col place-items-center mt-20">
-            <div className="md:text-xl font-bold text-white">
-                All players Assembled
+            <div className="md:text-xl font-bold text-black">
+                All battle cards assembled!!
             </div>
            
             <div className="flex mt-5 justify-between flex-wrap max-w-screen-xl text-center">
@@ -72,23 +72,23 @@ return (
 
         
          
-         <footer className="bg-white dark:bg-[#0c0d26] h-screen justify-between" >
+        <footer className="dark:bg-[#0c0d26] h-screen justify-between ">
     <div className="mx-auto w-full max-w-screen-xl">
       <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
         <div>
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className="text-gray-500 dark:text-blue-400 font-medium hover:underline">About</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">About</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="text-gray-500 dark:text-blue-400 font-medium hover:underline">Careers</a>
+                    <a href="#" className="hover:underline text-gray-500 dark:text-red-400 font-medium">Careers</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Brand Center</a>
+                    <a href="#" className="hover:underline text-gray-500 dark:text-red-400 font-medium">Brand Center</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Blog</a>
+                    <a href="#" className="hover:underline text-gray-500 dark:text-red-400 font-medium">Blog</a>
                 </li>
             </ul>
         </div>
@@ -96,16 +96,16 @@ return (
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Discord Server</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Discord Server</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Twitter</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Twitter</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Facebook</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Facebook</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Contact Us</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -113,13 +113,13 @@ return (
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Privacy Policy</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Privacy Policy</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Licensing</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Licensing</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Terms &amp; Conditions</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Terms &amp; Conditions</a>
                 </li>
             </ul>
         </div>
@@ -127,22 +127,22 @@ return (
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">iOS</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">iOS</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Android</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Android</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">Windows</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">Windows</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline text-gray-500 dark:text-blue-400 font-medium">MacOS</a>
+                    <a href="#" className=" hover:underline text-gray-500 dark:text-red-400 font-medium">MacOS</a>
                 </li>
             </ul>
         </div>
     </div>
     <div className="px-4 py-6 bg-gray-100 dark:bg-[#0c0d26] md:flex md:items-center md:justify-between">
-        <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="https://google.com/">Ultron</a>. All Rights Reserved.
+        <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Ultron™</a>. All Rights Reserved.
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center md:mt-0">
             <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
@@ -168,10 +168,7 @@ return (
         </div>
       </div>
     </div>
-</footer>   
-
-
-
+</footer>
     </div>
 );
 }
